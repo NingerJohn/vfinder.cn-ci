@@ -1,6 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+/**
+* 实例控制器（仅供参考）
+* 功能介绍：控制器实例，来统一开发规范，注释中需包含作者，创建时间，修改人等常用开发信息
+* 
+* @author NingerJohn
+* @ctime 2015年8月29日18:01:15
+* @modifiers NingerJohn
+* 
+*/
 class Welcome extends MY_Controller {
 
 	function __construct()
@@ -10,28 +18,20 @@ class Welcome extends MY_Controller {
 	}
 
 	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 * 前端首页
+	 * 显示各种分类的数据
+	 * 
+	 * @author 作者 NingerJohn
+	 * @ctime 创建时间 2015年8月29日17:57:48
+	 * @modifiers 修改人：NingerJohn; mike; jessica
+	 * 
 	 */
 	public function index()
 	{
 		// $this->load->view('welcome_message');
+		$this->welcome_m->()
 		$data = array('num'=>'1111','title'=>'title test');
-		$this->assign('test',$data);
-		$this->assign('tmp',$data);
-		echo __METHOD__;
-		$res = $this->fetch('test.html');
+		$this->load->view('Welcome/body', $data); // 调用body模板并赋值
 		// echo $res;
 	}
 }
