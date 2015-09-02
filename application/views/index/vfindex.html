@@ -29,8 +29,8 @@
       <p class="navbar-text pull-left">音乐</p> 
       <p class="navbar-text pull-left">书记</p> 
       <p class="navbar-text pull-left"><input type="text" id="global_select" placeholder="搜索" style="width:100%;"></p> 
-      <p class="navbar-text pull-right">登陆 </p> 
-      <p class="navbar-text pull-right">注册</p> 
+      <p class="navbar-text pull-right"><button type="button" class="btn " onclick="open_modal_login()">登陆</button> </p> 
+      <p class="navbar-text pull-right"><button type="button" class="btn " onclick="open_modal_register()">注册</button> </p> 
       <p class="navbar-text pull-right"> EN</p> 
      </div> 
     </div> 
@@ -150,5 +150,100 @@
  </div> 
 <!-- 底部end-->
 
+<!--  login start -->
+  <div class="modal fade" id="myModal_login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
+   <div class="modal-dialog"> 
+    <div class="modal-content"> 
+     <div class="modal-body"> 
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times; </button> 
+      <div class="loginBox row-fluid"> 
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
+        <h2>登陆窗体</h2> 
+        <p><input type="text" name="username" placeholder="用户名" style="color:#000000; width:220px;" /></p> 
+        <p><input type="password" name="password" placeholder="密码" style="color:#000000;  width:220px;" /></p> 
+        <span style="color:red">用来返回ajax 验证错误信息提醒</span> 
+        <div class="row-fluid"> 
+         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left"> 
+          <label><input type="checkbox" name="rememberme" checked="checked" />记住密码</label> 
+         </div> 
+         <div class="spn6 col-xs-6 col-sm-6 col-md-6 col-lg-6"> 
+         </div> 
+         <div class="span12 "> 
+          <input id ="login_submit" type="button" value=" 登陆 " class="btn btn-primary" style="width:100%; left:0;padding:5px 0px 10px 0px;margin:5px 0 5px 0;" /> 
+         </div> 
+         <div class="span12 "> 
+          <a onclick="open_modal_register();">马上注册</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="modal-footer">
+       		底部
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  
+<!--  login end -->
+
+
+
+<!-- register start -->
+<div class="modal fade" id="myModal_register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times; </button>
+                <form name="form_reg" method="post" action="{$reg_url}" id="form_reg">
+                <div class="loginBox row-fluid">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h2>注册</h2>
+                        <p><input type="text" name="username" placeholder="邮箱号/手机号" style="color:#000000; width:220px;" /></p> 
+                    </div>
+                    <div class="row-fluid">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p><input type="text" name="username" placeholder="请输入密码" style="color:#000000; width:220px;" /></p>
+                            <span>密码为6到12位数字或英文组合</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p><input type="text" name="username" placeholder="重复密码" style="color:#000000; width:220px;" /></p>
+                            <span>重复密码错误</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <input type="button" value=" 注册 " class="btn btn-primary" style="width:220px; " />
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <label><input type="checkbox" name="rememberme" checked="checked" />我已经看过并同意《用户协议》</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+            <div class="modal-footer">
+                注册成功---正在登陆~~~666
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- register end -->
+
+
+
+<script type="text/javascript" src="/js/handler/index/index_handler.js"></script>
+<script type="text/javascript">
+var handler = null;
+$(function () {
+	
+	handler = new IndexHandler();
+	handler.initLogin();
+});
+</script>
+
+
  </body>
 </html>
+
+
+
