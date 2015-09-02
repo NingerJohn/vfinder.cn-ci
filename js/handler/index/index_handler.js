@@ -1,3 +1,11 @@
+/**
+ * 
+ * @returns {IndexHandler}
+ * @author SunWei
+ * @crtime 2015/09/02 17:17
+ * @function 首页  js 功能
+ */
+
 function IndexHandler() {
 	/**
 	 * 查看初始化
@@ -18,13 +26,14 @@ function IndexHandler() {
 //	    });	
 	};
 	/**
-	 * 列表页
+	 * 登陆窗体  校准
 	 */
 	IndexHandler.prototype.loginSubmit = function() {
 		
 		
 		alert("sss");
-		/*
+
+		// 准备写 校准 方法 正则。 
 		var self = this;
 	    var valid = $.scojs_valid('#form',{
 	   	       	 rules: {
@@ -33,10 +42,12 @@ function IndexHandler() {
 	   	    	 }
 	       	 }
 		);
+		//参数校准
 		var user = $('#email').val();
 		var passwd = $('#passwd').val();
 		var checkcode = $('#checkcode').val();
 		var params = {user:user,passwd:passwd,checkcode:checkcode};
+		//ajax 封装 。我都还没做。这个等我做完再说
 		SsAjax.post(
 			params,
 			'/default/account/loginsubmit',
@@ -54,10 +65,11 @@ function IndexHandler() {
 			}
 		);
 	};	
-	*/
+	
 };
 
 }
+
 function open_modal_login(){
 	  
     $('#myModal_login').modal({
