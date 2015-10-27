@@ -28,7 +28,7 @@ class Welcome extends MY_Controller {
 	public function index()
 	{
 		// $this->load->view('welcome_message');
-		$this->welcome_m->test();
+		// $this->welcome_m->test();
 		$data = array('num'=>'1111','title'=>'title test');
 		$this->load->view('Welcome/body', $data); // 调用body视图模板并赋值
 		$this->load->view('index/vfindex.html');

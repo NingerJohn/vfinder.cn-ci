@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{$test.title}</title> // 原文是 <title>{$test['title']}</title>，是错误的写法，也有可能是Smarty版本的原因
+
+<style type="text/css">
+</style>
+</head>
+<body>
+{$test.num|md5} // 原文这里也写错了
+<br>
+{$tmp|pre}
+</body>
+</html>
